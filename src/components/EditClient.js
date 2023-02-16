@@ -153,13 +153,17 @@ function EditClient() {
                                 onChange={(e) => onInputChangeSeventh(e)}
                             />
                         </div>
-                        <button type="submit" className="btn btn-danger mt-5 text-uppercase mx-auto d-block"><b>Envoyer</b></button>
+                        <div className="text-center">
+                          <button type="submit" className="btn btn-danger mt-5 text-uppercase mx-auto d-block"><b>Envoyer</b></button>
+                        </div>
                     </form>
                 </div>
             </div>
-            <Link className="btn btn-primary mt-5 px-5 text-center mx-auto" to="/clients">
-                <BsFillArrowLeftCircleFill className="h1 align-middle"/>
-            </Link>
+            <div className="text-center">
+              <Link className="btn btn-primary mt-5 px-5 text-center mx-auto" to="/clients">
+                  <BsFillArrowLeftCircleFill className="h1 align-middle"/>
+              </Link>
+            </div>
         </div>
     </main>
     )
