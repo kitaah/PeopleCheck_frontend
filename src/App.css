@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+main {
+  padding: 8rem 0 5rem 0;
+}
+
+footer {
+  margin-top: 40rem;
+}
+
+.line-break::before {
+  content: "\a";
+  white-space: pre;
+}
+
+.link-to-allclients {
+  width: 18rem;
+  border: 0.1rem solid transparent;
+  border-radius: 5rem;
+}
+
+.link-to-allclients:hover {
+  transform: scale(1.05);
+  transition: 0.5s ease-in;
+}
+
+body, html {
+  background-color: #198754;
+}
+
+table {
+  vertical-align: middle!important;
+}
