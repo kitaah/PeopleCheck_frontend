@@ -1,10 +1,14 @@
-import React, { useEffect,useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaUsers, FaEye, FaEdit } from 'react-icons/fa';
 import { BsFillPlusCircleFill, BsTrashFill } from 'react-icons/bs';
 import { Link, useParams  } from 'react-router-dom';
 import axios from 'axios';
 
 function ViewAllClients() {
+    useEffect(() => {
+    document.title = 'Liste des clients 👤';
+    }, []);
+
     const [clients,setClients] = useState([]);
 
     const { id } = useParams();

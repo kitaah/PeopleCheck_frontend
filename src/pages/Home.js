@@ -1,4 +1,4 @@
-import React, {useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaUsers } from 'react-icons/fa';
 import AOS from "aos";
@@ -6,6 +6,7 @@ import "aos/dist/aos.css";
 
 function Home() {
     useEffect(() => {
+    document.title = 'Accueil 👤';
     AOS.init();
     AOS.refresh();
   }, []);

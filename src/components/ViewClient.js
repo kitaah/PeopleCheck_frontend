@@ -7,7 +7,11 @@ import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 
 function ViewClient() {
-  const [client, setClient] = useState({
+    useEffect(() => {
+    document.title = 'Information client 👤';
+    }, []);
+
+    const [client, setClient] = useState({
     fname: "",
     lname: "",
     gender: "",

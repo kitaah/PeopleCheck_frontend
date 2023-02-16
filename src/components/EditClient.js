@@ -5,6 +5,10 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 function EditClient() {
+    useEffect(() => {
+    document.title = 'Modifier un client 👤';
+    }, []);
+
     let navigate = useNavigate();
 
     const{id} = useParams();
@@ -64,7 +68,7 @@ function EditClient() {
                             onChange={(e) => onInputChange(e)}
                             />
                         </div>
-                         <div className="mb-3">
+                        <div className="mb-3">
                             <label htmlFor="fname" className="form-label">Prénom</label>
                             <input
                             type={"text"}
