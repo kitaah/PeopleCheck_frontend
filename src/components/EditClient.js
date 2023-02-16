@@ -59,6 +59,7 @@ function EditClient() {
                             name="fname"
                             defaultValue={fname}
                             onChange={onInputChange} 
+                            required
                             />
                         </div>
                         <div className="mb-3">
@@ -70,6 +71,7 @@ function EditClient() {
                             name="fname"
                             defaultValue={lname}
                             onChange={onInputChange} 
+                            required
                             />
                         </div>
                         <div className="mb-3">
@@ -90,6 +92,7 @@ function EditClient() {
                             name="age"
                             defaultValue={age}
                             onChange={onInputChange} 
+                            required
                             />
                         </div>
                         <div className="mb-3">
@@ -101,6 +104,7 @@ function EditClient() {
                             name="phone"
                             defaultValue={phone}
                             onChange={onInputChange} 
+                            required
                             />
                         </div>
                         <div className="mb-3">
@@ -112,6 +116,7 @@ function EditClient() {
                                 name="email"
                                 defaultValue={email}
                                 onChange={onInputChange} 
+                                required
                             />
                         </div>
                         <div className="mb-3">
@@ -125,6 +130,7 @@ function EditClient() {
                                 name="address"
                                 defaultValue={address}
                                 onChange={onInputChange} 
+                                required
                             />
                         </div>
                         <div className="text-center">

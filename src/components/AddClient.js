@@ -39,16 +39,17 @@ function AddClient() {
       <h1 className="text-center mb-5"><FaUserAlt className="display-4 pe-3" />Ajoute un client</h1>
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 bg-dark shadow">
-          <form onSubmit={handleSubmit} className="text-light p-3 needs-validation" noValidate>
+          <form onSubmit={handleSubmit} className="text-light p-3">
             <div className="mb-3">
               <label htmlFor="fname" className="form-label">Prénom</label>
-              <input required
+              <input
                 type={"text"}
                 className="form-control"
                 placeholder="Prénom..."
                 name="fname"
                 defaultValue={fname}
-                onChange={onInputChange}             
+                onChange={onInputChange}    
+                required       
                 />
             </div>
             <div className="mb-3">
@@ -60,11 +61,12 @@ function AddClient() {
                 name="lname"
                 defaultValue={lname}
                 onChange={onInputChange} 
+                required
               />
             </div>
             <div className="mb-3">
               <label htmlFor="gender" className="form-label">Genre:</label>
-                <select name="gender" class="form-select" defaultValue={gender} onChange={(e) => onInputChange(e)}>
+                <select name="gender" class="form-select" defaultValue={gender} onChange={(e) => onInputChange(e)} required>
                   <option value="">-- Sélectionner le genre --</option>
                   <option value="Homme">Homme</option>
                   <option value="Femme">Femme</option>
@@ -80,6 +82,7 @@ function AddClient() {
                 name="age"
                 defaultValue={age}
                 onChange={onInputChange} 
+                required
               />
             </div>
             <div className="mb-3">
@@ -91,6 +94,7 @@ function AddClient() {
                 name="phone"
                 defaultValue={phone}
                 onChange={onInputChange} 
+                required
               />
             </div>
             <div className="mb-3">
@@ -102,6 +106,7 @@ function AddClient() {
                 name="email"
                 defaultValue={email}
                 onChange={onInputChange} 
+                required
               />
             </div>
             <div className="mb-3">
@@ -113,6 +118,7 @@ function AddClient() {
                 name="address"
                 defaultValue={address}
                 onChange={onInputChange} 
+                required
               />
             </div>
             <div className="text-center">
@@ -129,6 +135,8 @@ function AddClient() {
         </Link>
       </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.1.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.1.0/umd/react-dom.production.min.js"></script>
     </main>
   );
 }

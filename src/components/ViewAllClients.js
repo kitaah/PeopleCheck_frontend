@@ -25,7 +25,7 @@ function ViewAllClients() {
     const deleteClient = async (id) => {
     await axios.delete(`http://localhost:8080/client/${id}`);
     loadClients();
-  };
+    };
 
     return (
     <main>
