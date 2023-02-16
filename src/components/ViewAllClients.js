@@ -60,7 +60,7 @@ function ViewAllClients() {
                         <td>{client.address}</td>
                         <td>
                             <Link className="btn btn-success mx-2" to={`/consultationclient/${client.id}`} title="Voir"><FaEye /></Link>
-                            <Link className="btn btn-primary mx-2" to={`/modificationclient/${client.id}`} title="Modifier">< FaEdit/></Link>
+                            <Link className="btn btn-primary my-2 mx-2" to={`/modificationclient/${client.id}`} title="Modifier">< FaEdit/></Link>
                             <button className="btn btn-danger mx-2" onClick={() => deleteClient(client.id)} title="Supprimer"><BsTrashFill /></button>
                         </td>
                     </tr>
