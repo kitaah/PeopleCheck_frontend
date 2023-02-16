@@ -29,25 +29,18 @@ function EditClient() {
     setClient({ ...client, [e.target.name]: e.target.value });
   };
 
-  const BASE_URL = `http://localhost:8080/client/${id}`;
-  const config = {
-      headers: {
-          'Content-Type': 'application/json'
-      }
-  };
-
   useEffect(() => {
     loadClient();
   }, []);
 
-    const onSubmit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.put(BASE_URL, client, config);
+        await axios.put(`http://localhost:8080/client/${id}`, client);
         navigate("/clients");
     };
 
   const loadClient = async () => {
-    const result = await axios.get(BASE_URL);
+    const result = await axios.get(`http://localhost:8080/client/${id}`);
     setClient(result.data);
   };
   return (
@@ -56,7 +49,7 @@ function EditClient() {
             <h1 className="text-center mb-5"><FaUserAlt className="display-4 pe-3" />Modifie un client</h1>
             <div className="row">
                 <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 bg-dark shadow">
-                    <form onSubmit={(e) => onSubmit(e)} className="text-light p-3">
+                    <form onSubmit={handleSubmit} className="text-light p-3">
                         <div className="mb-3">
                             <label htmlFor="fname" className="form-label">Prénom</label>
                             <input
@@ -65,7 +58,7 @@ function EditClient() {
                             placeholder="Prénom..."
                             name="fname"
                             defaultValue={fname}
-                            onChange={(e) => onInputChange(e)}
+                            onChange={onInputChange} 
                             />
                         </div>
                         <div className="mb-3">
@@ -76,26 +69,27 @@ function EditClient() {
                             placeholder="Prénom..."
                             name="fname"
                             defaultValue={lname}
-                            onChange={(e) => onInputChange(e)}
+                            onChange={onInputChange} 
                             />
                         </div>
                         <div className="mb-3">
-                          <label htmlFor="gender" className="form-label">Genre:</label>
-                              <select name="gender" class="form-select" defaultValue={gender} onChange={(e) => onInputChange(e)}>
-                              <option value="">-- Sélectionner le genre --</option>
-                              <option value="Homme">Homme</option>
-                              <option value="Femme">Femme</option>
-                          </select>
+                            <label htmlFor="gender" className="form-label">Genre:</label>
+                                <select name="gender" class="form-select" defaultValue={gender} onChange={(e) => onInputChange(e)}>
+                                <option value="">-- Sélectionner le genre --</option>
+                                <option value="Homme">Homme</option>
+                                <option value="Femme">Femme</option>
+                            </select>
                         </div>
                         <div className="mb-3">
                             <label htmlFor="age" className="form-label">Age</label>
                             <input
                             type={"number"}
+                            min="1"
                             className="form-control"
                             placeholder="Age..."
                             name="age"
                             defaultValue={age}
-                            onChange={(e) => onInputChange(e)}
+                            onChange={onInputChange} 
                             />
                         </div>
                         <div className="mb-3">
@@ -106,7 +100,7 @@ function EditClient() {
                             placeholder="Téléphone..."
                             name="phone"
                             defaultValue={phone}
-                            onChange={(e) => onInputChange(e)}
+                            onChange={onInputChange} 
                             />
                         </div>
                         <div className="mb-3">
@@ -117,7 +111,7 @@ function EditClient() {
                                 placeholder="E-mail..."
                                 name="email"
                                 defaultValue={email}
-                                onChange={(e) => onInputChange(e)}
+                                onChange={onInputChange} 
                             />
                         </div>
                         <div className="mb-3">
@@ -130,19 +124,19 @@ function EditClient() {
                                 placeholder="Address"
                                 name="address"
                                 defaultValue={address}
-                                onChange={(e) => onInputChange(e)}
+                                onChange={onInputChange} 
                             />
                         </div>
                         <div className="text-center">
-                          <button type="submit" className="btn btn-danger mt-5 text-uppercase mx-auto d-block"><b>Envoyer</b></button>
+                            <button type="submit" className="btn btn-danger mt-5 text-uppercase mx-auto d-block"><b>Envoyer</b></button>
                         </div>
                     </form>
                 </div>
             </div>
             <div className="text-center">
-              <Link className="btn btn-primary mt-5 px-5 text-center mx-auto" to="/clients">
-                  <BsFillArrowLeftCircleFill className="h1 align-middle"/>
-              </Link>
+                <Link className="btn btn-primary mt-5 px-5 text-center mx-auto" to="/clients">
+                    <BsFillArrowLeftCircleFill className="h1 align-middle"/>
+                </Link>
             </div>
         </div>
     </main>

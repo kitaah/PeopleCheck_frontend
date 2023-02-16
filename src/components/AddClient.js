@@ -27,16 +27,9 @@ function AddClient() {
     setClient({ ...client, [e.target.name]: e.target.value });
   };
 
-  const BASE_URL = "http://localhost:8080/client";
-  const config = {
-  headers: {
-    'Content-Type': 'application/json'
-  }
-    };
-
-  const onSubmit = async (e) => {
+  const handleSubmit =  async (e) => {
     e.preventDefault();
-    await axios.post(BASE_URL, client, config);
+    await axios.post("http://localhost:8080/client", client);
     navigate("/clients");
   };
 
@@ -46,17 +39,17 @@ function AddClient() {
       <h1 className="text-center mb-5"><FaUserAlt className="display-4 pe-3" />Ajoute un client</h1>
       <div className="row">
         <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 bg-dark shadow">
-          <form onSubmit={(e) => onSubmit(e)} className="text-light p-3">
+          <form onSubmit={handleSubmit} className="text-light p-3 needs-validation" noValidate>
             <div className="mb-3">
               <label htmlFor="fname" className="form-label">Prénom</label>
-              <input
+              <input required
                 type={"text"}
                 className="form-control"
                 placeholder="Prénom..."
                 name="fname"
                 defaultValue={fname}
-                onChange={(e) => onInputChange(e)}
-              />
+                onChange={onInputChange}             
+                />
             </div>
             <div className="mb-3">
               <label htmlFor="lname" className="form-label">Nom</label>
@@ -66,7 +59,7 @@ function AddClient() {
                 placeholder="Nom..."
                 name="lname"
                 defaultValue={lname}
-                onChange={(e) => onInputChange(e)}
+                onChange={onInputChange} 
               />
             </div>
             <div className="mb-3">
@@ -81,11 +74,12 @@ function AddClient() {
               <label htmlFor="age" className="form-label">Age</label>
               <input
                 type={"number"}
+                min="1"
                 className="form-control"
                 placeholder="Age..."
                 name="age"
                 defaultValue={age}
-                onChange={(e) => onInputChange(e)}
+                onChange={onInputChange} 
               />
             </div>
             <div className="mb-3">
@@ -96,7 +90,7 @@ function AddClient() {
                 placeholder="Téléphone..."
                 name="phone"
                 defaultValue={phone}
-                onChange={(e) => onInputChange(e)}
+                onChange={onInputChange} 
               />
             </div>
             <div className="mb-3">
@@ -107,7 +101,7 @@ function AddClient() {
                 placeholder="E-mail..."
                 name="email"
                 defaultValue={email}
-                onChange={(e) => onInputChange(e)}
+                onChange={onInputChange} 
               />
             </div>
             <div className="mb-3">
@@ -118,7 +112,7 @@ function AddClient() {
                 placeholder="Address"
                 name="address"
                 defaultValue={address}
-                onChange={(e) => onInputChange(e)}
+                onChange={onInputChange} 
               />
             </div>
             <div className="text-center">
