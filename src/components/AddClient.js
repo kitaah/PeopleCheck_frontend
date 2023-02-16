@@ -19,32 +19,8 @@ function AddClient() {
 
   const { fname, lname, gender, age, phone, email, address } = client;
 
-  const onInputChangeFirst = (e) => {
-    setClient({ ...client, fname: e.target.value });
-  };
-
-  const onInputChangeSecond = (e) => {
-    setClient({ ...client, lname: e.target.value });
-  };
-
-  const onInputChangeThird = (e) => {
-    setClient({ ...client, gender: e.target.value });
-  };
-
-  const onInputChangeFourth = (e) => {
-    setClient({ ...client, age: e.target.value });
-  };
-
-  const onInputChangeFifth = (e) => {
-    setClient({ ...client, phone: e.target.value });
-  };
-
-  const onInputChangeSixth = (e) => {
-    setClient({ ...client, email: e.target.value });
-  };
-
-  const onInputChangeSeventh = (e) => {
-    setClient({ ...client, address: e.target.value });
+  const onInputChange = (e) => {
+    setClient({ ...client, [e.target.name]: e.target.value });
   };
 
   const BASE_URL = "http://localhost:8080/client";
@@ -75,7 +51,7 @@ function AddClient() {
                 placeholder="Prénom..."
                 name="fname"
                 defaultValue={fname}
-                onChange={(e) => onInputChangeFirst(e)}
+                onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="mb-3">
@@ -86,12 +62,12 @@ function AddClient() {
                 placeholder="Nom..."
                 name="lname"
                 defaultValue={lname}
-                onChange={(e) => onInputChangeSecond(e)}
+                onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="mb-3">
               <label htmlFor="gender" className="form-label">Genre:</label>
-                <select name="gender" class="form-select" defaultValue={gender} onChange={(e) => onInputChangeThird(e)}>
+                <select name="gender" class="form-select" defaultValue={gender} onChange={(e) => onInputChange(e)}>
                   <option value="">-- Sélectionner le genre --</option>
                   <option value="Homme">Homme</option>
                   <option value="Femme">Femme</option>
@@ -105,7 +81,7 @@ function AddClient() {
                 placeholder="Age..."
                 name="age"
                 defaultValue={age}
-                onChange={(e) => onInputChangeFourth(e)}
+                onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="mb-3">
@@ -116,7 +92,7 @@ function AddClient() {
                 placeholder="Téléphone..."
                 name="phone"
                 defaultValue={phone}
-                onChange={(e) => onInputChangeFifth(e)}
+                onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="mb-3">
@@ -127,7 +103,7 @@ function AddClient() {
                 placeholder="E-mail..."
                 name="email"
                 defaultValue={email}
-                onChange={(e) => onInputChangeSixth(e)}
+                onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="mb-3">
@@ -138,7 +114,7 @@ function AddClient() {
                 placeholder="Address"
                 name="address"
                 defaultValue={address}
-                onChange={(e) => onInputChangeSeventh(e)}
+                onChange={(e) => onInputChange(e)}
               />
             </div>
             <div className="text-center">
