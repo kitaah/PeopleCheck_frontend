@@ -13,7 +13,7 @@ function Home() {
   return (
 
 <div data-aos="fade-right" data-aos-delay="100" data-aos-duration="4000">
-    <main className="main-page">
+    <main className="text-center">
         <h1 className="mb-5 px-5">Bienvenue chez PeopleCheck</h1>
         <h2 className="mb-3 px-5">Accède à la liste des clients !</h2>
         <Link className="btn btn-danger fw-bold text-uppercase border border-warning py-2 my-4 link-to-allclients" to="/clients"><span className="h4">Espace de gestion</span></Link>

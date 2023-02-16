@@ -25,7 +25,7 @@ function ViewAllClients() {
 
     return (
     <main>
-        <div className="container">
+        <div className="container text-center">
             <h1 className="mb-5"><FaUsers className="display-3 pe-3" />Liste des clients</h1>
             <Link className="btn btn-primary mb-3" to="/ajoutclient"><BsFillPlusCircleFill className="me-2" />Ajoute un client</Link>
             <table className="table table-hover table-responsive shadow table-light">

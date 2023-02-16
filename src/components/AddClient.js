@@ -90,15 +90,12 @@ function AddClient() {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="gender" className="form-label">Genre</label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Genre..."
-                name="gender"
-                defaultValue={gender}
-                onChange={(e) => onInputChangeThird(e)}
-              />
+              <label htmlFor="gender" className="form-label">Genre:</label>
+                <select name="gender" class="form-select" defaultValue={gender} onChange={(e) => onInputChangeThird(e)}>
+                  <option value="">-- Sélectionner le genre --</option>
+                  <option value="Homme">Homme</option>
+                  <option value="Femme">Femme</option>
+              </select>
             </div>
             <div className="mb-3">
               <label htmlFor="age" className="form-label">Age</label>

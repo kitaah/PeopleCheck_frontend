@@ -70,7 +70,9 @@ function ViewClient() {
                         </ul>
                     </div>
                 </div>
-                <Link className="btn btn-primary mt-5" to={"/clients"}>Retour</Link>
+                <div className="text-center">
+                    <Link className="btn btn-primary mt-5" to={"/clients"}>Retour</Link>
+                </div>
             </div>
         </div>
     </div>

@@ -25,7 +25,7 @@ function App() {
         </Routes>
       <Footer />
       </Router>
-      <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal fade text-center" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered text-dark" role="document">
             <div className="modal-content">
               <div className="modal-header">

@@ -88,27 +88,24 @@ function EditClient() {
                             onChange={(e) => onInputChangeFirst(e)}
                             />
                         </div>
-                        <div className="mb-3">
-                        <label htmlFor="lname" className="form-label">Nom</label>
-                        <input
-                            type={"text"}
-                            className="form-control"
-                            placeholder="Nom..."
-                            name="lname"
-                            defaultValue={lname}
-                            onChange={(e) => onInputChangeSecond(e)}
-                        />
-                        </div>
-                        <div className="mb-3">
-                            <label htmlFor="gender" className="form-label">Genre</label>
+                         <div className="mb-3">
+                            <label htmlFor="fname" className="form-label">Prénom</label>
                             <input
                             type={"text"}
                             className="form-control"
-                            placeholder="Genre..."
-                            name="gender"
-                            defaultValue={gender}
-                            onChange={(e) => onInputChangeThird(e)}
+                            placeholder="Prénom..."
+                            name="fname"
+                            defaultValue={lname}
+                            onChange={(e) => onInputChangeSecond(e)}
                             />
+                        </div>
+                        <div className="mb-3">
+                          <label htmlFor="gender" className="form-label">Genre:</label>
+                              <select name="gender" class="form-select" defaultValue={gender} onChange={(e) => onInputChangeThird(e)}>
+                              <option value="">-- Sélectionner le genre --</option>
+                              <option value="Homme">Homme</option>
+                              <option value="Femme">Femme</option>
+                          </select>
                         </div>
                         <div className="mb-3">
                             <label htmlFor="age" className="form-label">Age</label>
@@ -156,11 +153,11 @@ function EditClient() {
                                 onChange={(e) => onInputChangeSeventh(e)}
                             />
                         </div>
-                        <button type="submit" className="btn btn-danger mt-3"><b>Envoyer</b></button>
+                        <button type="submit" className="btn btn-danger mt-5 text-uppercase mx-auto d-block"><b>Envoyer</b></button>
                     </form>
                 </div>
             </div>
-            <Link className="btn btn-primary mt-5 px-5" to="/clients">
+            <Link className="btn btn-primary mt-5 px-5 text-center mx-auto" to="/clients">
                 <BsFillArrowLeftCircleFill className="h1 align-middle"/>
             </Link>
         </div>
