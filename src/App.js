@@ -13,7 +13,7 @@ import Footer from './layout/Footer';
 
 function App() {
   return (
-    <div className="App bg-success text-light">
+    <div className="App text-light">
       <Router>
       <Header/>
         <Routes>
