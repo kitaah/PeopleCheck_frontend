@@ -1,7 +1,7 @@
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './layout/Header';
 import Home from './pages/Home';
