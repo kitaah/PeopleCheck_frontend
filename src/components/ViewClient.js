@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { FaUserAlt, FaAddressCard } from 'react-icons/fa';
 import { BsFillTelephoneFill } from 'react-icons/bs';
 import { AiOutlineFieldNumber } from 'react-icons/ai';
 import { MdEmail } from 'react-icons/md';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
 
 function ViewClient() {
     useEffect(() => {
@@ -34,12 +36,11 @@ function ViewClient() {
 
   return (
     <main>
-    <div className="container">
+    <Container>
         <h1 className="text-center mb-5"><FaUserAlt className="display-4 pe-3" />Informations du client</h1>
-        <div className="row">
+        <Row>
             <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 shadow bg-dark">
                 <h2 className="text-center m-4">{client.fname} {client.lname}</h2>
-
                 <div className="card">
                     <div className="card-header">
                         <ul className="list-group list-group-flush">
@@ -78,8 +79,8 @@ function ViewClient() {
                     <Link className="btn btn-primary mt-5" to={"/clients"}>Retour</Link>
                 </div>
             </div>
-        </div>
-    </div>
+        </Row>
+    </Container>
     </main>
     )
 }

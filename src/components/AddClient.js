@@ -3,6 +3,10 @@ import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import { FaUserAlt } from 'react-icons/fa';
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
 
 function AddClient() {
   useEffect(() => {
@@ -35,108 +39,55 @@ function AddClient() {
 
   return (
     <main>
-    <div className="container">
-      <h1 className="text-center mb-5"><FaUserAlt className="display-4 pe-3" />Ajoute un client</h1>
-      <div className="row">
-        <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 bg-dark shadow">
-          <form onSubmit={handleSubmit} className="text-light p-3">
-            <div className="mb-3">
-              <label htmlFor="fname" className="form-label">Prénom</label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Prénom..."
-                name="fname"
-                defaultValue={fname}
-                onChange={onInputChange}    
-                required       
-                />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="lname" className="form-label">Nom</label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Nom..."
-                name="lname"
-                defaultValue={lname}
-                onChange={onInputChange} 
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="gender" className="form-label">Genre:</label>
-                <select name="gender" class="form-select" defaultValue={gender} onChange={(e) => onInputChange(e)} required>
+      <Container>
+        <h1 className="text-center mb-5"><FaUserAlt className="display-4 pe-3" />Ajoute un client</h1>
+        <Row>
+          <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 bg-dark shadow px-5">
+            <Form onSubmit={handleSubmit} className="text-light p-3">
+              <Form.Group className="mb-3" controlId="formAddFname">
+                <Form.Label htmlFor="fname">Prénom</Form.Label>
+                <Form.Control type={"text"} placeholder="Prénom..." name="fname" defaultValue={fname} onChange={onInputChange} required/>
+              </Form.Group>
+            <Form.Group className="mb-3" controlId="formAddLname">
+              <Form.Label htmlFor="lname" >Nom</Form.Label>
+              <Form.Control type={"text"} placeholder="Nom..." name="lname" defaultValue={lname} onChange={onInputChange} required/>
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="formAddGender">
+              <Form.Label htmlFor="gender">Genre:</Form.Label>
+                <Form.Select name="gender" defaultValue={gender} onChange={onInputChange} required>
                   <option value="">-- Sélectionner le genre --</option>
                   <option value="Homme">Homme</option>
                   <option value="Femme">Femme</option>
-              </select>
-            </div>
-            <div className="mb-3">
-              <label htmlFor="age" className="form-label">Age</label>
-              <input
-                type={"number"}
-                min="1"
-                className="form-control"
-                placeholder="Age..."
-                name="age"
-                defaultValue={age}
-                onChange={onInputChange} 
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="phone" className="form-label">Téléphone</label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Téléphone..."
-                name="phone"
-                defaultValue={phone}
-                onChange={onInputChange} 
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="email" className="form-label">E-mail</label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="E-mail..."
-                name="email"
-                defaultValue={email}
-                onChange={onInputChange} 
-                required
-              />
-            </div>
-            <div className="mb-3">
-              <label htmlFor="address" className="form-label">Adresse</label>
-              <input
-                type={"text"}
-                className="form-control"
-                placeholder="Address"
-                name="address"
-                defaultValue={address}
-                onChange={onInputChange} 
-                required
-              />
-            </div>
-            <div className="text-center">
-              <button type="submit" className="btn btn-danger mt-3">
-                <b>Envoyer</b>
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div className="text-center">
+              </Form.Select>
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formAddAge">
+                <Form.Label htmlFor="age">Age</Form.Label>
+                <Form.Control type={"number"} min="1" placeholder="Age..." name="age" defaultValue={age} onChange={onInputChange} required/>
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formAddPhone">
+                <Form.Label htmlFor="phone">Téléphone</Form.Label>
+                <Form.Control type={"text"} placeholder="Téléphone..." name="phone" defaultValue={phone} onChange={onInputChange} required/>
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formAddEmail">
+                <Form.Label htmlFor="email">E-mail</Form.Label>
+                <Form.Control type={"text"} placeholder="E-mail..." name="email" defaultValue={email} onChange={onInputChange} required/>
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formAddAddress">
+                <Form.Label htmlFor="address">Adresse</Form.Label>
+                <Form.Control type={"text"} placeholder="Address" name="address" defaultValue={address} onChange={onInputChange} required/>
+              </Form.Group>
+              <div className="d-grid gap-2">
+                <Button type="submit" variant="danger" className="fw-bold mt-3">Envoyer</Button>
+              </div>
+            </Form>
+          </div>
+        </Row>
+        <div className="text-center">
         <Link className="btn btn-primary mt-5 px-5" to="/clients">
             <BsFillArrowLeftCircleFill className="h1 align-middle"/>
         </Link>
-      </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.1.0/umd/react.production.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.1.0/umd/react-dom.production.min.js"></script>
+        </div>
+      </Container>
     </main>
   );
 }

@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { FaUsers, FaEye, FaEdit } from 'react-icons/fa';
 import { BsFillPlusCircleFill, BsTrashFill } from 'react-icons/bs';
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 import { Link, useParams  } from 'react-router-dom';
 import axios from 'axios';
 
@@ -29,10 +32,10 @@ function ViewAllClients() {
 
     return (
     <main>
-        <div className="container text-center">
+        <Container className="text-center">
             <h1 className="mb-5"><FaUsers className="display-3 pe-3" />Liste des clients</h1>
             <Link className="btn btn-primary mb-3" to="/ajoutclient"><BsFillPlusCircleFill className="me-2" />Ajoute un client</Link>
-            <table className="table table-hover table-responsive shadow table-light">
+            <Table className="table table-hover table-responsive shadow table-light">
                 <thead className="table-dark">
                     <tr>
                         <th scope="col">#</th>
@@ -59,16 +62,16 @@ function ViewAllClients() {
                         <td>{client.email}</td>
                         <td>{client.address}</td>
                         <td>
-                            <Link className="btn btn-success mx-2" to={`/consultationclient/${client.id}`} title="Voir"><FaEye /></Link>
-                            <Link className="btn btn-primary my-2 mx-2" to={`/modificationclient/${client.id}`} title="Modifier">< FaEdit/></Link>
-                            <button className="btn btn-danger mx-2" onClick={() => deleteClient(client.id)} title="Supprimer"><BsTrashFill /></button>
+                            <Link className="btn btn-success" to={`/consultationclient/${client.id}`} title="Voir"><FaEye /></Link>
+                            <Link className="btn btn-primary my-2 mx-4" to={`/modificationclient/${client.id}`} title="Modifier">< FaEdit/></Link>
+                            <Button variant="danger" onClick={() => deleteClient(client.id)} title="Supprimer"><BsTrashFill /></Button>
                         </td>
                     </tr>
                 ))
             }
                 </tbody>
-            </table>
-        </div>
+            </Table>
+        </Container>
     </main>
     )
 }
