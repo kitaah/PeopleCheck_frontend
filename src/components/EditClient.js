@@ -56,8 +56,8 @@ function EditClient() {
                             <Form.Control type={"text"} placeholder="Prénom..." name="fname" defaultValue={fname} onChange={onInputChange} required/>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formEditLname">
-                            <Form.Label htmlFor="fname" >Prénom</Form.Label>
-                            <Form.Control type={"text"} placeholder="Prénom..." name="fname" defaultValue={lname} onChange={onInputChange} required/>
+                            <Form.Label htmlFor="lname" >Nom</Form.Label>
+                            <Form.Control type={"text"} placeholder="Prénom..." name="lname" defaultValue={lname} onChange={onInputChange} required/>
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formEditGender">
                             <Form.Label htmlFor="gender">Genre:</Form.Label>
