@@ -8,17 +8,13 @@ import { Link, useParams  } from 'react-router-dom';
 import axios from 'axios';
 
 function ViewAllClients() {
+    const [clients,setClients] = useState([]);
     useEffect(() => {
     document.title = 'Liste des clients 👤';
+    loadClients();
     }, []);
 
-    const [clients,setClients] = useState([]);
-
     const { id } = useParams();
-
-    useEffect(() => {
-        loadClients();
-    },[]);
 
     const loadClients = async() => {
     const result = await axios.get("http://localhost:8080/clients");

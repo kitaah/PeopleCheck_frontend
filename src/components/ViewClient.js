@@ -11,6 +11,7 @@ import axios from 'axios';
 function ViewClient() {
     useEffect(() => {
     document.title = 'Information client 👤';
+    loadClient();
     }, []);
 
     const [client, setClient] = useState({
@@ -21,20 +22,16 @@ function ViewClient() {
     phone: "",
     email: "",
     address: "",
-  });
+    });
 
-  const { id } = useParams();
+    const { id } = useParams();
 
-  useEffect(() => {
-    loadClient();
-  }, []);
-
-  const loadClient = async () => {
+    const loadClient = async () => {
     const result = await axios.get(`http://localhost:8080/client/${id}`);
     setClient(result.data);
-  };
+    };
 
-  return (
+    return (
     <main>
     <Container>
         <h1 className="text-center mb-5"><FaUserAlt className="display-4 pe-3" />Informations du client</h1>

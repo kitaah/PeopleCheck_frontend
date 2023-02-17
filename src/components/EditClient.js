@@ -11,6 +11,7 @@ import axios from "axios";
 function EditClient() {
     useEffect(() => {
     document.title = 'Modifier un client 👤';
+    loadClient();
     }, []);
 
     let navigate = useNavigate();
@@ -29,13 +30,9 @@ function EditClient() {
 
     const { fname, lname, gender, age, phone, email, address } = client;
 
-  const onInputChange = (e) => {
-    setClient({ ...client, [e.target.name]: e.target.value });
-  };
-
-  useEffect(() => {
-    loadClient();
-  }, []);
+    const onInputChange = (e) => {
+        setClient({ ...client, [e.target.name]: e.target.value });
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -43,11 +40,11 @@ function EditClient() {
         navigate("/clients");
     };
 
-  const loadClient = async () => {
-    const result = await axios.get(`http://localhost:8080/client/${id}`);
-    setClient(result.data);
-  };
-  return (
+    const loadClient = async () => {
+        const result = await axios.get(`http://localhost:8080/client/${id}`);
+        setClient(result.data);
+    };
+    return (
     <main>
         <Container>
             <h1 className="text-center mb-5"><FaUserAlt className="display-4 pe-3" />Modifie un client</h1>
