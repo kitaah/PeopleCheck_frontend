@@ -61,6 +61,7 @@ function EditClient() {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="formEditGender">
                             <Form.Label htmlFor="gender">Genre:</Form.Label>
+                            <Form.Control className="mb-3 bg-dark text-light" type={"text"} placeholder="Prénom..." name="gender" defaultValue={gender} disabled/>
                                 <Form.Select name="gender" defaultValue={gender} onChange={onInputChange}>
                                     <option value="">-- Sélectionner le genre --</option>
                                     <option value="Homme">Homme</option>
