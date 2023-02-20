@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { FaUsers, FaEye, FaEdit } from 'react-icons/fa';
+import { FaUsers, FaEye, FaEdit, FaSearch } from 'react-icons/fa';
 import { BsFillPlusCircleFill, BsTrashFill } from 'react-icons/bs';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import { Link, useParams  } from 'react-router-dom';
 import axios from 'axios';
+import Form from 'react-bootstrap/Form';
+import Stack from 'react-bootstrap/Stack';
 
 function ViewAllClients() {
     const [clients,setClients] = useState([]);
@@ -13,6 +15,8 @@ function ViewAllClients() {
     document.title = 'Liste des clients 👤';
     loadClients();
     }, []);
+
+    const[search, setSearch] = useState('');
 
     const { id } = useParams();
 
@@ -29,8 +33,14 @@ function ViewAllClients() {
     return (
     <main>
         <Container className="text-center">
-            <h1 className="mb-5"><FaUsers className="display-3 pe-3" />Liste des clients</h1>
+            <h1 className="mb-5"><FaUsers className="pe-3" size={65} />Liste des clients</h1>
             <Link className="btn btn-primary mb-3" to="/ajoutclient"><BsFillPlusCircleFill className="me-2" />Ajoute un client</Link>
+            <Form className="d-flex align-items-center justify-content-center align-middle my-3">
+                <Stack direction="horizontal" gap={3}>
+                <FaSearch size={30} />
+                <Form.Control onChange={(e) =>setSearch(e.target.value)}  type="search" className="search-bar" placeholder="Cherche un nom..."/>
+                </Stack>
+            </Form>
             <Table className="table table-hover table-responsive shadow table-light">
                 <thead className="table-dark">
                     <tr>
@@ -47,7 +57,10 @@ function ViewAllClients() {
                 </thead>
                 <tbody>
             {
-                clients.map((client, index)=>(
+                clients.filter((client) => {
+                    return search.toLowerCase()  === ''
+                    ? client : client.lname.toLowerCase().includes(search);
+                }).map((client, index)=>(
                     <tr>
                         <th scope="row" key={index}>{index+1}</th>
                         <td>{client.fname}</td>
@@ -58,9 +71,9 @@ function ViewAllClients() {
                         <td>{client.email}</td>
                         <td>{client.address}</td>
                         <td>
-                            <Link className="btn btn-success" to={`/consultationclient/${client.id}`} title="Voir"><FaEye /></Link>
-                            <Link className="btn btn-primary my-2 mx-4" to={`/modificationclient/${client.id}`} title="Modifier">< FaEdit/></Link>
-                            <Button variant="danger" onClick={() => deleteClient(client.id)} title="Supprimer"><BsTrashFill /></Button>
+                            <Link className="btn btn-success" to={`/consultationclient/${client.id}`} title="Voir"><FaEye size={20} /></Link>
+                            <Link className="btn btn-primary my-2 mx-4" to={`/modificationclient/${client.id}`} title="Modifier">< FaEdit size={20} /></Link>
+                            <Button variant="danger" onClick={() => deleteClient(client.id)} title="Supprimer"><BsTrashFill size={20} /></Button>
                         </td>
                     </tr>
                 ))

@@ -22,9 +22,9 @@ function Header() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="navbar-nav ms-auto text-end mt-3 mt-md-0 mt-lg-0 mt-xl-0 align-middle">
-                        <Nav.Link><Link className="nav-link" to="/"><BsFillHouseDoorFill className="h2" /></Link></Nav.Link>
-                        <Nav.Link><Link className="nav-link px-md-2 px-lg-2 px-xl-3" to="#"><IoMdHelpCircle className="h2" onClick={handleShow} /></Link></Nav.Link>
-                        <Nav.Link><Link className="nav-link px-md-2 px-lg-2 px-xl-3" to="/clients"><FaUsers className="h2" /></Link></Nav.Link>
+                        <Nav.Link><Link className="nav-link" to="/"><BsFillHouseDoorFill size={30} /></Link></Nav.Link>
+                        <Nav.Link><Link className="nav-link px-md-2 px-lg-2 px-xl-3" to="#"><IoMdHelpCircle size={30} onClick={handleShow} /></Link></Nav.Link>
+                        <Nav.Link><Link className="nav-link px-md-2 px-lg-2 px-xl-3" to="/clients"><FaUsers size={30} /></Link></Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

@@ -20,7 +20,7 @@ function Home() {
         <Link className="btn btn-danger fw-bold text-uppercase border border-warning py-2 my-4 link-to-allclients" to="/clients"><span className="h4">Espace de gestion</span></Link>
         <p className="px-5 h5 pt-3">Accède à l'espace de gestion pour consulter l'ensemble des clients.</p>
         <p className="px-5 pb-3 h5">Tu pourras également ajouter, consulter, <span className="line-break">modifier ou supprimer un client de ton choix !</span></p>
-        <FaUsers className="display-3" />
+        <FaUsers size={70} />
     </main>
 </div>
   )

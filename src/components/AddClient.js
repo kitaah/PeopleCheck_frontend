@@ -40,7 +40,7 @@ function AddClient() {
   return (
     <main>
       <Container>
-        <h1 className="text-center mb-5"><FaUserAlt className="display-4 pe-3" />Ajoute un client</h1>
+        <h1 className="text-center mb-5"><FaUserAlt className="pe-3" size={60} />Ajoute un client</h1>
         <Row>
           <div className="col-md-6 offset-md-3 border rounded p-4 mt-2 bg-dark shadow px-5">
             <Form onSubmit={handleSubmit} className="text-light p-3">
