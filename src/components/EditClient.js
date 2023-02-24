@@ -80,7 +80,7 @@ function EditClient() {
                             <Form.Label htmlFor="email">E-mail</Form.Label>
                             <Form.Control type={"text"} placeholder="E-mail..." name="email" defaultValue={email} onChange={onInputChange} required/>
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="formEdiAddress">
+                        <Form.Group className="mb-3" controlId="formEditAddress">
                             <Form.Label htmlFor="address">Adresse</Form.Label>
                             <Form.Control type={"text"} placeholder="Address" name="address" defaultValue={address} onChange={onInputChange} required/>
                         </Form.Group>
