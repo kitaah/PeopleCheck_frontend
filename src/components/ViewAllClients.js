@@ -12,8 +12,8 @@ import Stack from 'react-bootstrap/Stack';
 function ViewAllClients() {
     const [clients,setClients] = useState([]);
     useEffect(() => {
-    document.title = 'Liste des clients 👤';
-    loadClients();
+        document.title = 'Liste des clients 👤';
+        loadClients();
     }, []);
 
     const[search, setSearch] = useState('');
@@ -21,13 +21,13 @@ function ViewAllClients() {
     const { id } = useParams();
 
     const loadClients = async() => {
-    const result = await axios.get("http://localhost:8080/clients");
-    setClients(result.data);
+        const result = await axios.get("http://localhost:8080/clients");
+        setClients(result.data);
     }
 
     const deleteClient = async (id) => {
-    await axios.delete(`http://localhost:8080/client/${id}`);
-    loadClients();
+        await axios.delete(`http://localhost:8080/client/${id}`);
+        loadClients();
     };
 
     return (

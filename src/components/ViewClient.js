@@ -11,25 +11,25 @@ import axios from 'axios';
 
 function ViewClient() {
     useEffect(() => {
-    document.title = 'Information client 👤';
-    loadClient();
+        document.title = 'Information client 👤';
+        loadClient();
     }, []);
 
     const [client, setClient] = useState({
-    fname: "",
-    lname: "",
-    gender: "",
-    age: "",
-    phone: "",
-    email: "",
-    address: "",
+        fname: "",
+        lname: "",
+        gender: "",
+        age: "",
+        phone: "",
+        email: "",
+        address: "",
     });
 
     const { id } = useParams();
 
     const loadClient = async () => {
     const result = await axios.get(`http://localhost:8080/client/${id}`);
-    setClient(result.data);
+        setClient(result.data);
     };
 
     return (
